@@ -1,3 +1,9 @@
+/* Name: fileop.c
+ * Purpose: Contains the functions to read the accounts from file
+ * 	and to write them.
+ * Author: Naci Furkan Karaduman
+ * */
+
 #include "fileop.h"
 #include <stdio.h>
 #include "return_codes.h"

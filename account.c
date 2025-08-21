@@ -1,3 +1,9 @@
+/* Name: account.c
+ * Purpose: Implements the functions in the
+ * 	header account.h. Functions about displaying, creating
+ * 	or destoying account structs.
+ * Author: Naci Furkan Karaduman
+*/
 #include "account.h"
 #include <stdio.h>
 #include <stdlib.h>

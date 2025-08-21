@@ -1,3 +1,7 @@
+/* Name: operations.c
+ * Purpose: Contains operations about adding, removing,
+ * 	updating or searching accounts.
+ * Author: Naci Furkan Karaduman*/
 #include <stdio.h>
 #include "operations.h"
 #include <string.h>

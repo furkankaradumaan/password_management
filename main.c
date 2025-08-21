@@ -23,11 +23,15 @@ extern int accounts;
 int main(void)
 {
 	// Firstly we need to ask the master password and confirm it.
+	// Ask the user to enter the master string to access the SSPasword 
+	// Management System.
 	char master_password[50];
 	int res; 
 	printf("Enter the master password: ");
 	res = scanf("%49s", master_password);
 	
+	// Compare the result with the MASTER_PASSWORD. If there is a match,
+	// print a welcome message, otherwise print an error and terminate the program.
 	if(res == 1 && strcmp(master_password, MASTER_PASSWORD) == 0)
 		printf("Welcome to SSPassword Management System\n");
 	else{
@@ -35,9 +39,17 @@ int main(void)
 		return 1;
 	}
 	
+	// account_storage is a global variable and all of its pointers are
+	// initially NULL. This function initializes all of the pointers of
+	// the array.
 	operation_account_storage_initialize();
+
 	// Load the accounts
+	// read the account data into account_storage.
 	accounts = read_accounts_from_file(account_storage);
+
+	// Check if the return value of the function is the FILE_COULD_NOT_OPEN_ERROR
+	// error code(see return_codes.h)
 	if(accounts == FILE_COULD_NOT_OPEN_ERROR){
 		perror("Occured an error while reading files from source file\n");
 		return accounts;
@@ -104,6 +116,7 @@ int main(void)
 				fprintf(stderr, "Unknown operation %d\n", operation);
 				res = UNKNOWN_OPERATION_ERROR;	
 		}
+		// Print the return codes.
 		if(res == SUCCESS)
 			fprintf(stdout, "SUCCESS\n");
 		else if(res == MISSING_FIELD_ERROR)
@@ -124,7 +137,13 @@ int main(void)
 			fprintf(stderr, "FILE COULD NOT OPEN\n");
 	}while(operation != EXIT && res == SUCCESS);
 	
+	/*
+	 *	Save all the accounts into the source file back.
+	 * */
 	int saved = save_accounts_to_file(account_storage, accounts);
+	/*
+	 *	Check if the number of saved account matches with the total number of accounts.
+	 * */
 	if(saved == accounts)
 		printf("All accounts saved successfully.\n");
 	else

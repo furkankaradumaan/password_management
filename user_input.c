@@ -1,3 +1,9 @@
+/* Name: user_input.c
+ * Purpose: Implementing functions in user_input.h.
+ * 	Getting integer or string data from the user by
+ * 	displaying the desired prompt.
+ * Author: Naci Furkan Karaduman
+*/
 #include <stdio.h>
 #include "user_input.h"
 

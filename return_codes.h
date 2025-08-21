@@ -1,3 +1,10 @@
+/* Name: return_codes.h
+ * Purpose: To mantain meaningfull names for
+ * 	function return values and to make easier
+ * 	to manage them.
+ * Author: Naci Furkan Karaduman
+ * */
+
 #ifndef _RETURN_CODES_H
 #define _RETURN_CODES_H
 

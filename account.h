@@ -1,3 +1,9 @@
+/* Name: account.h
+ * Purpose: To provide a structure to keep the 
+ * 	account data.
+ * Author: Naci Furkan Karaduman
+*/
+
 #ifndef _ACCOUNT_H
 #define _ACCOUNT_H
 
